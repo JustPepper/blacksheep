@@ -1,0 +1,90 @@
+@import 'booo'
+
+/* Global stylus */
+svg#svg
+	display none
+a
+	text-decoration none
+	color inherit
+
+.wrapper
+	max-width 1700px
+	width 100%
+	height auto
+	margin auto
+	
+/* Colors */
+$black = #212121
+
+/* Fonts */
+$secundary_font = 'Roboto', sans-serif
+
+use-box-sizing-reset()
+use-reset()
+
+
+/* Top nav */
+header
+	background-color $black
+	color white
+	font-family $secundary_font
+	font-weight 400
+	font-size rem(16px)
+	.top-nav
+		size 100% 130px
+		display flex
+		justify-content space-between
+		align-items center
+		+e('logo')
+			height 79.5px
+			img
+				height 100%
+		+e('menu')
+			height 100%
+			ul
+				display flex
+				height inherit
+				li
+					position relative
+					height inherit
+					display flex
+					align-items center
+					&:hover
+						ul
+							display flex
+				ul
+					display none
+					position absolute
+					flex-direction column
+					top 130px
+					height auto
+					background-color $black
+					li
+						size 250px 76px
+						a
+							display block
+							size 90% 75px
+							padding 0
+							margin auto
+							display flex
+							justify-content center
+							align-items center
+						&:first-child
+							a
+								border-bottom 1px dashed white
+			a
+				letter-spacing 3.23px
+				padding 0 21px
+				transition color 200ms linear
+				size 100%
+				display flex
+				align-items center
+				&:hover
+					color #9b922c
+	
+	.featured-slider
+		size 100% 885px
+		+e('item')
+			size inherit
+			background-size 100%
+			background-position center
