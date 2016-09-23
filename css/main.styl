@@ -1,9 +1,12 @@
 @import 'booo'
 
+font-face('../fonts/Helvetica-Bold')
+
 /* Colors */
 $black = #212121
 
 /* Fonts */
+$primary_font = 'Helvetica-Bold', sans-serif
 $secundary_font = 'Roboto', sans-serif
 
 /* Global stylus */
@@ -15,11 +18,9 @@ a
 
 .wrapper
 	max-width 1080px
-	width 100%
-	height auto
+	size 100% auto
 	margin auto
-	
-	
+
 .subtitle
 	font-family $secundary_font
 	font-size 22px
@@ -28,6 +29,9 @@ a
 	line-height 27px
 .title
 	font-family $primary_font
+	+m('big')
+		font-size 55px
+		line-height 60px 
 	
 use-box-sizing-reset()
 use-reset()
@@ -70,7 +74,7 @@ header
 					height auto
 					background-color $black
 					li
-						size 250px auto
+						size 200px auto
 						a
 							display block
 							size 90% 60px
@@ -95,7 +99,22 @@ header
 	.featured-slider
 		size 100% 593px
 		+e('item')
-			size inherit
+			size 100%
 			background-size cover
 			background-position center
 			background-repeat no-repeat
+		+e('text')
+			size inherit
+			display flex
+			flex-direction column
+			justify-content flex-start
+			.subtitle
+				margin-bottom 22px
+			.title
+				margin-top 60px
+			hr
+				border none
+				margin 0
+				height 2px
+				background-color white
+				width 200px

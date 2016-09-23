@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Helvetica-Bold';
+  src: url("../fonts/Helvetica-Bold.woff2") format('woff2'), url("../fonts/Helvetica-Bold.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 /* Colors */
 /* Fonts */
 /* Global stylus */
@@ -22,7 +28,11 @@ a {
   line-height: 27px;
 }
 .title {
-  font-family: $primary_font;
+  font-family: 'Helvetica-Bold', sans-serif;
+}
+.title--big {
+  font-size: 55px;
+  line-height: 60px;
 }
 html {
   box-sizing: border-box;
@@ -201,7 +211,7 @@ header .top-nav__menu ul ul {
   background-color: #212121;
 }
 header .top-nav__menu ul ul li {
-  width: 250px;
+  width: 200px;
   height: auto;
 }
 header .top-nav__menu ul ul li a {
@@ -234,9 +244,29 @@ header .featured-slider {
   height: 593px;
 }
 header .featured-slider__item {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+header .featured-slider__text {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+header .featured-slider__text .subtitle {
+  margin-bottom: 22px;
+}
+header .featured-slider__text .title {
+  margin-top: 60px;
+}
+header .featured-slider__text hr {
+  border: none;
+  margin: 0;
+  height: 2px;
+  background-color: #fff;
+  width: 200px;
 }
