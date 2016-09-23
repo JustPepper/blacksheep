@@ -7,7 +7,7 @@ a {
   color: inherit;
 }
 .wrapper {
-  max-width: 1700px;
+  max-width: 1280px;
   width: 100%;
   height: auto;
   margin: auto;
@@ -151,17 +151,17 @@ header {
   color: #fff;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 header .top-nav {
   width: 100%;
-  height: 130px;
+  height: 86px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 header .top-nav__logo {
-  height: 79.5px;
+  height: 54px;
 }
 header .top-nav__logo img {
   height: 100%;
@@ -186,18 +186,18 @@ header .top-nav__menu ul ul {
   display: none;
   position: absolute;
   flex-direction: column;
-  top: 130px;
+  top: 86px;
   height: auto;
   background-color: #212121;
 }
 header .top-nav__menu ul ul li {
   width: 250px;
-  height: 76px;
+  height: auto;
 }
 header .top-nav__menu ul ul li a {
   display: block;
   width: 90%;
-  height: 75px;
+  height: 60px;
   padding: 0;
   margin: auto;
   display: flex;
@@ -209,7 +209,7 @@ header .top-nav__menu ul ul li:first-child a {
 }
 header .top-nav__menu a {
   letter-spacing: 3.23px;
-  padding: 0 21px;
+  padding: 0 12px;
   transition: color 200ms linear;
   width: 100%;
   height: 100%;
@@ -221,11 +221,12 @@ header .top-nav__menu a:hover {
 }
 header .featured-slider {
   width: 100%;
-  height: 885px;
+  height: 593px;
 }
 header .featured-slider__item {
   width: inherit;
   height: inherit;
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }

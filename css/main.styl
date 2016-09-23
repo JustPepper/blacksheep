@@ -8,7 +8,7 @@ a
 	color inherit
 
 .wrapper
-	max-width 1700px
+	max-width 1280px
 	width 100%
 	height auto
 	margin auto
@@ -29,14 +29,14 @@ header
 	color white
 	font-family $secundary_font
 	font-weight 400
-	font-size rem(16px)
+	font-size rem(12px)
 	.top-nav
-		size 100% 130px
+		size 100% 86px
 		display flex
 		justify-content space-between
 		align-items center
 		+e('logo')
-			height 79.5px
+			height 54px
 			img
 				height 100%
 		+e('menu')
@@ -56,14 +56,14 @@ header
 					display none
 					position absolute
 					flex-direction column
-					top 130px
+					top 86px
 					height auto
 					background-color $black
 					li
-						size 250px 76px
+						size 250px auto
 						a
 							display block
-							size 90% 75px
+							size 90% 60px
 							padding 0
 							margin auto
 							display flex
@@ -74,7 +74,7 @@ header
 								border-bottom 1px dashed white
 			a
 				letter-spacing 3.23px
-				padding 0 21px
+				padding 0 12px
 				transition color 200ms linear
 				size 100%
 				display flex
@@ -83,8 +83,9 @@ header
 					color #9b922c
 	
 	.featured-slider
-		size 100% 885px
+		size 100% 593px
 		+e('item')
 			size inherit
-			background-size 100%
+			background-size cover
 			background-position center
+			background-repeat no-repeat
