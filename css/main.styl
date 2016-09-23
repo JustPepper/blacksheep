@@ -1,5 +1,11 @@
 @import 'booo'
 
+/* Colors */
+$black = #212121
+
+/* Fonts */
+$secundary_font = 'Roboto', sans-serif
+
 /* Global stylus */
 svg#svg
 	display none
@@ -8,17 +14,21 @@ a
 	color inherit
 
 .wrapper
-	max-width 1280px
+	max-width 1150px
 	width 100%
 	height auto
 	margin auto
 	
-/* Colors */
-$black = #212121
-
-/* Fonts */
-$secundary_font = 'Roboto', sans-serif
-
+	
+.subtitle
+	font-family $secundary_font
+	font-size 22px
+	font-weight 300
+	letter-spacing 3px
+	line-height 27px
+.title
+	font-family $primary_font
+	
 use-box-sizing-reset()
 use-reset()
 
@@ -27,14 +37,14 @@ use-reset()
 header
 	background-color $black
 	color white
-	font-family $secundary_font
-	font-weight 400
-	font-size rem(12px)
 	.top-nav
 		size 100% 86px
 		display flex
 		justify-content space-between
 		align-items center
+		font-family $secundary_font
+		font-weight 400
+		font-size rem(12px)
 		+e('logo')
 			height 54px
 			img
