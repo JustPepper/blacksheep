@@ -2,6 +2,11 @@
 
 font-face('../fonts/Helvetica-Bold')
 
+flex-center()
+	display flex
+	justify-content center
+	align-items center
+
 /* Colors */
 $black = #212121
 
@@ -21,6 +26,9 @@ a
 	size 100% auto
 	margin auto
 
+.full-width
+	max-width 100%
+
 .subtitle
 	font-family $secundary_font
 	font-size 22px
@@ -32,11 +40,20 @@ a
 	+m('big')
 		font-size 55px
 		line-height 60px 
+
+.text
+	font-family $secundary_font
+	font-size 16px
+	
 	
 use-box-sizing-reset()
 use-reset()
+use-flex-grid()
 
-
+/* Modules */
+@import 'modules/*'
+/* Libraries */
+@import 'libs/*'
 /* Top nav */
 header
 	background-color $black
@@ -118,3 +135,164 @@ header
 				height 2px
 				background-color white
 				width 200px
+
+.section
+	padding 75px 0
+	height auto
+	.section-right
+		padding-left 75px
+		line-height 1.1
+		text-align right
+		display flex
+		flex-direction column
+		align-items flex-end
+		justify-content flex-end
+		.icon-wrapper
+			margin-bottom 12px
+
+.back-img
+	position absolute
+	size 100%
+	z-index -1
+	overflow hidden
+	&:after
+		content ''
+		position absolute
+		top 0
+		left 0
+		size 100%
+		background-color rgba(#141414, .45)
+	img
+		size auto 100%
+		transition all 250ms ease
+
+.brands
+	height 400px
+	overflow hidden
+	display flex
+	+e('item')
+		position relative
+		size (100 / 3)% inherit
+		flex-center()
+		&:nth-child(1)
+			.back-img
+				&:after
+					background-color rgba(#141414, .94)
+		&:nth-child(2)
+		&:nth-child(3)
+			&:hover
+				.back-img
+					img
+						transform scale(1.2)
+		.caption
+			.section-featured__title
+				margin-bottom 75px
+			.section-featured__title
+			.section-featured__subtitle
+				color white
+			.section-featured__subtitle
+				border-color white
+		.skullcandy
+			height 65px
+		.lost
+			height 100px
+
+.img-accordion
+	size 100% 400px
+	overflow hidden
+	position relative
+	+e('item')
+		size inherit
+		flex-center()
+		.back-img
+			img
+				size 100% auto
+		&:nth-child(1)
+			width 70%
+		&:nth-child(2)
+		&:nth-child(3)
+			width 15%
+		.section-featured
+			color white
+			+e('title')
+				font-size 36px
+			+e('subtitle')
+				border-color white
+				margin-bottom 22px
+			.btn
+				width 215px
+
+.section-gallery
+	padding-top 0
+	height 300px
+	.section-left
+		width 55%
+		flex-center()
+.carrousel
+	display flex
+	overflow hidden
+	size 100%
+	+e('item')
+		height 100%
+		overflow hidden
+		video
+			width 100%
+	.slick-prev
+		background-color $black
+		width 32px
+		margin 0 5px
+		border none
+		svg
+			size 18px
+			fill white
+
+.newsletter
+	background url('../img/contact-back.jpg') no-repeat
+	background-size cover
+	color white
+	.title
+		font-size 32px
+		text-align center
+	.form
+		display flex
+		margin 38px auto 0
+		justify-content space-around
+		max-width 775px
+		input
+			width 300px
+		.btn
+			color white
+			padding-left 22px
+			padding-right 22px
+
+.form
+	input
+		background none
+		border none
+		border-bottom 1px solid white
+		padding 12px 0
+		font-family $secundary_font
+		font-weight 300
+		outline 0
+		color white
+		font-size 16px
+		letter-spacing 2px
+		+placeholder()
+			color white
+			transition transform 250ms ease
+		&:focus
+			+placeholder()
+				transform translate(0, -110%)
+
+.footer
+	font-family $secundary_font
+	+e('media')
+		background-color $black
+		flex-center()
+		padding 6px 0
+		svg
+			fill white
+	+e('copyright')
+		padding 22px 0
+		text-align center
+		font-size 14px
