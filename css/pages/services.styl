@@ -1,0 +1,74 @@
+.services
+	position relative
+	margin-bottom 75px
+	.services-top-line
+	.services-bottom-line
+		background $black
+		z-index -1
+	.services-top-line
+		size 100% 85px
+		position absolute
+		top 0
+		left 0
+	.services-bottom-line
+		size 100% 14px
+	.with-border
+		border-right 1px dashed rgba($black, .25)
+.service
+	font-family $secundary_font
+	font-weight 300
+	+e('title')
+		size 100% 85px
+		flex-center()
+		color white
+		letter-spacing 3px
+		+m('border')
+			border-right 1px dashed rgba(white, .25)
+	+e('type')
+		display flex
+		padding 45px
+		.icon
+			size 115px
+			border 1px dashed $black
+			flex-center()
+			img
+				height 50px
+		.percent
+			width 175px
+			display flex
+			flex-direction column
+			justify-content space-between
+			h2
+			h3
+				border-top 1px solid $black
+				padding 8px 0
+			h2
+				line-height 1.2
+				span
+					font-size 32px
+		+m('right')
+			justify-content flex-end
+			.icon
+				margin-right 10px
+			.percent
+				text-align right
+		+m('left')
+			.icon
+				order 2
+				margin-left 10px
+			.percent
+				text-align left
+	+e('brief')
+		padding 0 45px
+		.text
+			//
+			margin-bottom 45px
+		ul
+			list-style-type disc
+			list-style-position inside
+	.btn
+		border 1px solid $black
+		max-width 150px
+		margin 45px auto
+		font-size 14px
+		font-weight 900

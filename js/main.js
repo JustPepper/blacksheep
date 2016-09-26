@@ -10,12 +10,15 @@
 	  });
 
 	  $('.featured-slider').slick({
-	  	nextArrow: null,
+	  	nextArrow: '<button><svg><use xlink:href="#right" /></svg></button>',
 	  	prevArrow: null,
 	  	draggable: false,
 	  	dots: true,
+	  	appendArrows: $('.appended-arrow'),
 	  	dotsClass: 'featured-dots',
-	  	appendDots: $(".appended-dots")
+	  	appendDots: $(".appended-dots"),
+	  	autoplay: true,
+  		autoplaySpeed: 2000
 	  });
 
 	  $('.spec__item').hover(

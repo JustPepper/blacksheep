@@ -7,6 +7,7 @@ var gulp 	= require('gulp'),
 	connect = require('gulp-connect'),
 	notify	= require('gulp-notify'),
 	plumber = require('gulp-plumber'),
+	autoprefixer = require('gulp-autoprefixer'),
 	concat 	= require('gulp-concat');
 
 /* Server */
@@ -44,6 +45,17 @@ gulp.task('compile', function() {
 		.pipe(connect.reload())
 });
 
+/* Prefixer */
+gulp.task('prefix', function () {
+	return gulp.src('./css/main.css')
+		.pipe(autoprefixer({
+			browsers: ['> 5%', 'last 3 iOS versions'],
+			cascade: false
+		}))
+		.pipe(gulp.dest('./css'));
+});
+
+
 /* Concat */
 gulp.task('scripts', function() {
   return gulp.src('./js/lib/*.js')
@@ -55,7 +67,8 @@ gulp.task('scripts', function() {
 gulp.task('watch', function() {
 	gulp.watch(['./*.html'], ['html']);
 	gulp.watch(['./js/*.js'], ['js']);
-	gulp.watch('./css/**/*.styl', ['compile'])
+	gulp.watch('./css/**/*.styl', ['compile']);
+	gulp.watch('./css/main.css', ['prefix']);
 });
 
 
