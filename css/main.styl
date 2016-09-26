@@ -31,24 +31,42 @@ a
 
 .subtitle
 	font-family $secundary_font
-	font-size 22px
+	font-size 16px
 	font-weight 300
 	letter-spacing 3px
 	line-height 27px
+	@media screen and (min-width: 768px)
+		font-size 22px
 .title
 	font-family $primary_font
 	+m('big')
-		font-size 55px
+		font-size 32px
 		line-height 60px 
+		@media screen and (min-width: 768px)
+			font-size 55px
+
+.long-title
+	display flex
+	align-items flex-end
+	.title
+		font-size 32px
+	.subtitle
+		font-size 18px
+		margin-left 14px
+		padding-left 14px
+		border-left 1px solid $black
 
 .text
 	font-family $secundary_font
 	font-size 16px
 	
-	
-use-box-sizing-reset()
 use-reset()
+use-box-sizing-reset()
 use-flex-grid()
+use-animate({
+	_rotateInUpLeft: true
+	_duration: 300ms
+})
 
 /* Modules */
 @import 'modules/*'
@@ -58,20 +76,30 @@ use-flex-grid()
 header
 	background-color $black
 	color white
+	position relative
 	.top-nav
-		size 100% 86px
+		size 100% 68px
 		display flex
 		justify-content space-between
 		align-items center
 		font-family $secundary_font
 		font-weight 400
 		font-size rem(12px)
+		padding 0 1rem
+		@media screen and (min-width: 768px)
+			padding 0
+			height 86px
 		+e('logo')
-			height 54px
-			img
+			height 34px
+			@media screen and (min-width: 768px)
+				height 54px
+			svg
 				height 100%
 		+e('menu')
+			display none
 			height 100%
+			@media screen and (min-width: 768px)
+				display block
 			ul
 				display flex
 				height inherit
@@ -90,6 +118,7 @@ header
 					top 86px
 					height auto
 					background-color $black
+					z-index 9999
 					li
 						size 200px auto
 						a
@@ -114,39 +143,85 @@ header
 					color #9b922c
 	
 	.featured-slider
-		size 100% 593px
+		size 100% auto
+		@media screen and (min-width: 768px)
+			height 593px
 		+e('item')
-			size 100%
+			size 100% 593px
 			background-size cover
 			background-position center
 			background-repeat no-repeat
 		+e('text')
-			size inherit
+			size inherit 593px
 			display flex
 			flex-direction column
 			justify-content flex-start
 			.subtitle
 				margin-bottom 22px
 			.title
-				margin-top 60px
+				margin 45px 0 90px
 			hr
 				border none
 				margin 0
 				height 2px
 				background-color white
-				width 200px
+				width 35%
+				@media screen and (min-width: 768px)
+					width 200px
+		+e('bottom')
+			padding 16px
+			font-family $secundary_font
+			font-weight 300
+			text-align center
+			background-color rgba(white, .10)
+	.dots-wrapper
+		position absolute
+		size 100% 250px
+		bottom 0
+		left 0
+		display flex
+		justify-content flex-start
+		align-items center
+		.featured-dots
+			display flex
+			z-index 999
+			button
+				font-size 0
+				background-color rgba(white, .45)
+				size 38px 3px
+				border 0
+				margin 0 5px
+				outline 0
+				cursor pointer
+			.slick-active
+				button
+					background-color white
+
+.featured-video
+	size 100% 300px
+	background-size cover
+	background-position center
+	
 
 .section
-	padding 75px 0
-	height auto
+	padding 45px 0
+	size 100% auto
+	.section-featured
+		width 28%
 	.section-right
-		padding-left 75px
 		line-height 1.1
-		text-align right
+		text-align justify
 		display flex
 		flex-direction column
-		align-items flex-end
-		justify-content flex-end
+		align-items flex-start
+		justify-content flex-start
+		width 100%
+		padding 22px
+		@media screen and (min-width: 768px)
+			padding-left 75px
+			text-align right
+			align-items flex-end
+			justify-content flex-end
 		.icon-wrapper
 			margin-bottom 12px
 
@@ -155,6 +230,7 @@ header
 	size 100%
 	z-index -1
 	overflow hidden
+	transition all 250ms ease
 	&:after
 		content ''
 		position absolute
@@ -162,17 +238,19 @@ header
 		left 0
 		size 100%
 		background-color rgba(#141414, .45)
-	img
-		size auto 100%
-		transition all 250ms ease
 
 .brands
-	height 400px
+	height auto
 	overflow hidden
-	display flex
+	@media screen and (min-width: 768px)
+		height 400px
+		display flex
 	+e('item')
 		position relative
-		size (100 / 3)% inherit
+		overflow hidden
+		size 100% 400px
+		@media screen and (min-width: 768px)
+			size (100 / 3)% inherit 
 		flex-center()
 		&:nth-child(1)
 			.back-img
@@ -182,8 +260,7 @@ header
 		&:nth-child(3)
 			&:hover
 				.back-img
-					img
-						transform scale(1.2)
+					transform scale(1.2)
 		.caption
 			.section-featured__title
 				margin-bottom 75px
@@ -193,14 +270,64 @@ header
 			.section-featured__subtitle
 				border-color white
 		.skullcandy
-			height 65px
+			height 55px
+			@media screen and (min-width: 768px)
+				height 65px
 		.lost
 			height 100px
+			
+	+e('spec')
+		size 100 - (100 / 3)% 400px
+		position relative
+		display flex
+		.spec__item
+			size (100 / 4)% inherit
+			background-size cover
+			background-position left
+			.spec__info
+				size 100%
+				position absolute
+				left 0
+				top 0
+				display none
+			ul
+				position absolute
+				left 0
+				top 0
+				size 100%
+				background-color #C2C2C2
+				display flex
+				li
+					display flex
+					flex-direction column
+					size (100 / 5)% 100%
+					div
+						flex 1
+					.spec__icon
+					.spec__text
+						flex-center()
+						font-family $secundary_font
+						text-transform uppercase
+						letter-spacing 3px
+						font-size 12px
+					.spec__icon
+						border-bottom 1px solid rgba($black, .15)
+						border-right 1px solid rgba($black, .15)
+						svg
+							size 50px
+							fill $black
+					&:last-child
+						.spec__icon
+							border-right 0
+
+.show
+	display block !important
 
 .img-accordion
 	size 100% 400px
 	overflow hidden
 	position relative
+	display none
 	+e('item')
 		size inherit
 		flex-center()
@@ -224,19 +351,30 @@ header
 
 .section-gallery
 	padding-top 0
-	height 300px
+	height auto
+	@media screen and (min-width: 768px)
+		height 300px
 	.section-left
-		width 55%
+		width 100%
 		flex-center()
+		@media screen and (min-width: 768px)
+			width 58%
+			.section-featured
+				width auto
 .carrousel
 	display flex
 	overflow hidden
-	size 100%
+	size 100% 300px
+	margin-top 22px
+	@media screen and (min-width: 768px)
+		height 100%
+		margin-top 0
 	+e('item')
 		height 100%
 		overflow hidden
 		video
-			width 100%
+		iframe
+			height 300px !important
 	.slick-prev
 		background-color $black
 		width 32px
@@ -251,15 +389,24 @@ header
 	background-size cover
 	color white
 	.title
-		font-size 32px
+		font-size 24px
 		text-align center
+		@media screen and (min-width: 768px)
+			font-size 32px
 	.form
 		display flex
 		margin 38px auto 0
-		justify-content space-around
 		max-width 775px
+		flex-direction column
+		align-items center
+		@media screen and (min-width: 768px)
+			flex-direction row
+			justify-content space-around
 		input
 			width 300px
+			margin-bottom 18px
+			@media screen and (min-width: 768px)
+				margin-bottom 0
 		.btn
 			color white
 			padding-left 22px
@@ -296,3 +443,6 @@ header
 		padding 22px 0
 		text-align center
 		font-size 14px
+
+/* About Page */
+@import 'pages/about.styl'

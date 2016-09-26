@@ -1,14 +1,17 @@
 .section-featured
+	padding 0 22px
+	@media screen and (min-width: 768px)
+		padding 0
 	+e('title')
 		font-family $primary_font
+		margin-bottom 22px
 		font-size 32px
 		line-height 34px
-		margin-bottom 22px
 	+e('subtitle')
 		font-family $secundary_font
 		font-weight 300
-		font-size 18px
-		letter-spacing 5.86px
 		display block
 		padding 6px 0 6px 18px
 		border-left 2px solid $black
+		font-size 18px
+		letter-spacing 5.86px

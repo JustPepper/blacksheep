@@ -1,0 +1,75 @@
+.about
+	.wrapper
+		text-align center
+	+e('title')
+		border-left 1px solid $black
+		display inline-block
+		margin 0 auto 45px
+		text-align left
+		h2
+		h3
+			margin-left 16px
+		h2
+			font-family $primary_font
+			font-size 28px
+			margin-bottom 8px
+		h3
+			font-family $secundary_font
+			font-size 20px
+			letter-spacing 3px
+	
+	+e('team')
+		size 100% auto
+		display flex
+		flex-wrap wrap
+		justify-content center
+		color white
+		letter-spacing 2px
+		.text
+			font-size 14px
+		figure
+			size 50% 250px
+			position relative
+			overflow hidden
+			font-weight 300
+			@media screen and (min-width: 768px)
+				size (100 / 6)% 250px
+			div
+				size 100%
+				position absolute
+				z-index -1
+				filter brightness(40%)
+				background-size cover
+				background-position center
+			figcaption
+				size 100%
+				display flex
+				justify-content flex-start
+				align-items flex-end
+				padding 12px
+
+.clients
+	hr
+		margin 22px 0 0 0
+		border 0
+		height 1px 
+		background-color $black
+	+e('list')
+		max-width 850px
+		margin auto
+		ul
+			display flex
+			flex-wrap wrap
+			justify-content space-around
+			padding-top 45px
+			li
+				size (100 / 5)% auto
+				flex-center()
+				//margin 45px 0 0
+				&:hover
+					img
+						filter grayscale(0)
+				img
+					size 75% auto
+					filter grayscale(1)
+					transition filter 400ms ease

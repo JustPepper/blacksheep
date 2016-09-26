@@ -7,7 +7,7 @@ var gulp 	= require('gulp'),
 	connect = require('gulp-connect'),
 	notify	= require('gulp-notify'),
 	plumber = require('gulp-plumber'),
-	concat = require('gulp-concat');
+	concat 	= require('gulp-concat');
 
 /* Server */
 gulp.task('connect', function() {
@@ -53,7 +53,7 @@ gulp.task('scripts', function() {
 
 /* Watch */
 gulp.task('watch', function() {
-	gulp.watch(['./**/*.html'], ['html']);
+	gulp.watch(['./*.html'], ['html']);
 	gulp.watch(['./js/*.js'], ['js']);
 	gulp.watch('./css/**/*.styl', ['compile'])
 });
