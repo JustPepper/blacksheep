@@ -1,10 +1,12 @@
 .product
-	size (90/ 4)% 268px
+	size 80% 268px
 	font-family $secundary_font
 	display flex
 	flex-direction column
 	position relative
 	margin-bottom 45px
+	@media screen and (min-width: 768px)
+		size (90/ 4)% 268px
 	+m('new')
 		&:before
 			content 'NUEVO'

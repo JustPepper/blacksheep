@@ -1,0 +1,113 @@
+.brand-slider
+	size 100% 553px
+	margin-bottom 75px
+	+e('item')
+		size 100%
+		background-size contain
+		background-repeat no-repeat
+		background-position center
+		font-size 32px
+	+e('content')
+		size 50% 100%
+		padding-right 45px
+		display flex
+		flex-direction column
+		justify-content center
+		align-items flex-end
+		.title
+			font-family $secundary_font
+			font-weight 900
+			margin-bottom 12px
+		.subtitle
+			letter-spacing 5px
+			margin-bottom 12px
+		.dashed-border
+			size 100% 1px
+			border-bottom 1px dashed rgba($black, .50)
+			margin-bottom 25%
+
+.promo
+	border-top 1px dashed rgba($black, .50)
+	+e('title')
+		padding 22px 0
+		display flex
+		align-items center
+		.subtitle
+		.text
+			font-size 18px
+		.subtitle
+			font-weight 900
+			margin-right 45px
+		.text
+			letter-spacing 4px
+			font-weight 300
+	+e('image')
+		size 100% auto
+		img
+			width 100%
+
+.brand-nav
+	font-family $secundary_font
+	ul
+		display flex
+		li
+			size (100/ 4)% 65px
+			flex-center()
+			cursor pointer
+	+m('surf')
+		border-bottom 1px dashed rgba($black, .50)
+		li
+			border-right 1px dashed rgba($black, .50)
+			&:last-child
+				border 0
+
+.single-product--surf
+	max-width 1700px
+	margin auto
+	padding 75px 0
+	.single-product__order
+		background $black
+		color white
+		border-top 0
+		margin-top 45px
+		padding 12px
+		justify-content space-between
+		.text
+			font-size 18px
+	.product
+		+e('photo')
+			border 0
+	.vertical-slider
+		size 25%
+		background white
+		border-right 1px dashed rgba($black, .5)
+		div
+			overflow hidden
+			height 113px
+			border-bottom 1px dashed rgba($black, .5)
+			img
+				position absolute
+				top 0
+				left 100%
+				transform-origin 0 0
+				transform rotate(90deg)
+				width 35%
+				height auto
+		.slick-current
+			border-bottom 1px dashed #cacaca
+			img
+				opacity .2
+		.slick-slide
+			position relative
+		.slick-arrow
+			background $black
+			border none
+			size 100% 24px
+			position absolute
+			bottom 0
+			left 0
+			outline 0
+			svg
+				size 20px
+				fill white
+				transform rotate(-90deg)

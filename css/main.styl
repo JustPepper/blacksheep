@@ -48,14 +48,22 @@ a
 
 .long-title
 	display flex
-	align-items flex-end
+	align-items flex-start
+	flex-direction column
+	@media screen and (min-width: 768px)
+		flex-direction row
+		align-items flex-end
 	.title
 		font-size 32px
+		margin-bottom 14px
+		@media screen and (min-width: 768px)
+			margin-bottom 0
 	.subtitle
 		font-size 18px
-		margin-left 14px
 		padding-left 14px
 		border-left 1px solid $black
+		@media screen and (min-width: 768px)
+			margin-left 14px
 
 .text
 	font-family $secundary_font
@@ -268,6 +276,7 @@ header
 			padding-left 75px
 			text-align right
 			justify-content center
+			align-items flex-end
 		.icon-wrapper
 			margin-bottom 12px
 
@@ -512,3 +521,6 @@ header
 
 /* Technology */
 @import 'pages/products.styl'
+
+/* Brands */
+@import 'pages/brands.styl'
