@@ -1,0 +1,49 @@
+.product
+	size (90/ 4)% 268px
+	font-family $secundary_font
+	display flex
+	flex-direction column
+	position relative
+	margin-bottom 45px
+	+m('new')
+		&:before
+			content 'NUEVO'
+			background-color #bebebe
+			position absolute
+			display block
+			size 68px 25px
+			flex-center()
+			top -15px
+			left 0
+			font-size 85%
+			letter-spacing 2px
+	+e('photo')
+		size 97% calc(100% - 20px)
+		border 1px solid rgba($black, .15)
+		text-align center
+		overflow hidden
+		margin-left 3%
+		img
+			size auto 100%
+	+e('name')
+		background-color $black
+		size 97% 40px
+		display block
+		line-height 40px
+		color white
+		font-weight 300
+		font-size 14px
+		padding 0 16px 
+		display flex
+		justify-content space-between
+		align-items center
+		position absolute
+		bottom 0
+		left 0
+		b
+			font-weight 900
+		i
+			flex-center()
+			svg
+				size 18px
+				fill white

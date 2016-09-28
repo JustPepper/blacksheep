@@ -49,6 +49,9 @@
 				padding 12px
 
 .clients
+	padding 0 22px 
+	@media screen and (min-width: 768px)
+		padding 0
 	hr
 		margin 22px 0 0 0
 		border 0
@@ -63,9 +66,11 @@
 			justify-content space-around
 			padding-top 45px
 			li
-				size (100 / 5)% auto
+				size (100/2)% auto
 				flex-center()
 				//margin 45px 0 0
+				@media screen and (min-width: 768px)
+					size (100 / 5)% auto
 				&:hover
 					img
 						filter grayscale(0)

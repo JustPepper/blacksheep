@@ -13,7 +13,8 @@
 	.services-bottom-line
 		size 100% 14px
 	.with-border
-		border-right 1px dashed rgba($black, .25)
+		@media screen and (min-width: 768px)
+			border-right 1px dashed rgba($black, .25)
 .service
 	font-family $secundary_font
 	font-weight 300
@@ -22,8 +23,10 @@
 		flex-center()
 		color white
 		letter-spacing 3px
+		background $black
 		+m('border')
-			border-right 1px dashed rgba(white, .25)
+			@media screen and (min-width: 768px)
+				border-right 1px dashed rgba(white, .25)
 	+e('type')
 		display flex
 		padding 45px

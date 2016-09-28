@@ -6,7 +6,15 @@
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		nextArrow: null,
-		prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="#left" /></svg></button>'
+		prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="#left" /></svg></button>',
+		responsive: [
+			{
+		      breakpoint: 480,
+		      settings: {
+		        slidesToShow: 1
+		    	}
+		    }
+		]
 	  });
 
 	  $('.featured-slider').slick({
@@ -17,7 +25,7 @@
 	  	appendArrows: $('.appended-arrow'),
 	  	dotsClass: 'featured-dots',
 	  	appendDots: $(".appended-dots"),
-	  	autoplay: true,
+	  	autoplay: false,
   		autoplaySpeed: 2000
 	  });
 

@@ -1,0 +1,78 @@
+.contact
+	text-align center
+	padding 45px 22px
+	@media screen and (min-width: 768px)
+		padding-top 75px
+		padding-bottom 75px
+	hr
+		width 100px
+		border 0
+		height 2px
+		background-color $black
+		margin 45px auto
+	.title
+		font-size 26px
+		@media screen and (min-width: 768px)
+			font-size 32px
+	.phone
+		margin 22px
+		display block
+	.icon-wrapper
+		ul
+			justify-content center
+			li
+				size 50px
+				svg
+					size 22px
+
+.contact-form
+	background-color #dbdbdb
+	padding 22px 0
+	@media screen and (min-width: 768px)
+		padding 45px 0
+	.wrapper
+		@media screen and (min-width: 768px)
+			align-items center
+			.grid__col
+				padding-left 22px
+	.form
+		width 100%
+	.title
+		font-size 28px
+		line-height 1.3
+		text-align center
+		@media screen and (min-width: 768px)
+			font-size 32px
+			border-right 2px solid $black
+			padding-right 22px
+	input
+		color $black
+		border-color $black
+		width 100%
+		margin 14px 0
+		+placeholder()
+			color $black
+		@media screen and (min-width: 768px)
+			margin 12px 0 0
+	textarea
+		size 100% 75px
+		@media screen and (min-width: 768px)
+			height 102px
+	.btn
+		margin-top 14px
+		border-color $black
+		font-weight 900
+		width 150px
+		@media screen and (min-width: 768px)
+			padding 8px
+			margin 0
+	.form
+		padding 0 22px
+		@media screen and (min-width: 768px)
+			padding 0
+		.grid__col
+			width 100%
+			display flex
+			flex-direction column
+			justify-content flex-end
+			align-items flex-end

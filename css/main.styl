@@ -40,10 +40,11 @@ a
 .title
 	font-family $primary_font
 	+m('big')
-		font-size 32px
-		line-height 60px 
+		font-size 26px
+		line-height 1.4
 		@media screen and (min-width: 768px)
 			font-size 55px
+			line-height 60px 
 
 .long-title
 	display flex
@@ -149,20 +150,34 @@ header
 		size 100% auto
 		@media screen and (min-width: 768px)
 			height 593px
+		+m('medium')
+			height 350px
 		+e('item')
-			size 100% 593px
+			size 100% 350px
+			padding 22px
 			background-size cover
 			background-position center
 			background-repeat no-repeat
+			@media screen and (min-width: 768px)
+				height 593px
+				padding 0
 		+e('text')
-			size inherit 593px
+			size 100%
 			display flex
 			flex-direction column
 			justify-content flex-start
+			@media screen and (min-width: 768px)
+				height 593px
 			.subtitle
-				margin-bottom 22px
+				margin-bottom 14px
+				@media screen and (min-width: 768px)
+					margin-bottom 22px
 			.title
-				margin 45px 0 90px
+				margin 0
+				@media screen and (min-width: 768px)
+					margin 45px 0 90px
+			+m('white')
+				color white
 			hr
 				border none
 				margin 0
@@ -179,15 +194,20 @@ header
 			background-color rgba(white, .10)
 	.dots-wrapper
 		position absolute
-		size 100% 250px
+		size 100% 35px
 		bottom 0
 		left 0
 		display flex
 		justify-content flex-start
 		align-items center
+		@media screen and (min-width: 768px)
+			height 250px
 		.featured-dots
 			display flex
 			z-index 999
+			justify-content center
+			@media screen and (min-width: 768px)
+				justify-content flex-start
 			button
 				font-size 0
 				background-color rgba(white, .45)
@@ -218,17 +238,22 @@ header
 				fill white
 
 .featured-video
-	size 100% 300px
+	size 100% 135px
 	background-size cover
 	background-position center
+	padding 22px
 	flex-center()
-	color $black	
+	color $black
+	@media screen and (min-width: 768px)
+		padding 0
 
 .section
 	padding 75px 0
 	size 100% auto
 	.section-featured
-		width 36%
+		width 100%
+		@media screen and (min-width: 768px)
+			width 36%
 	.section-right
 		line-height 1.1
 		text-align justify
@@ -437,12 +462,15 @@ header
 
 .form
 	input
+	textarea
+		outline 0
+		font-family $secundary_font
+		font-weight 300
+	input
 		background none
 		border none
 		border-bottom 1px solid white
 		padding 12px 0
-		font-family $secundary_font
-		font-weight 300
 		outline 0
 		color white
 		font-size 16px
@@ -453,6 +481,10 @@ header
 		&:focus
 			+placeholder()
 				transform translate(0, -110%)
+	textarea
+		border 0
+		resize none
+		
 
 .footer
 	font-family $secundary_font
@@ -473,3 +505,10 @@ header
 
 /* Services */
 @import 'pages/services.styl'
+
+
+/* Contact */
+@import 'pages/contact.styl'
+
+/* Technology */
+@import 'pages/products.styl'
