@@ -54,6 +54,15 @@
 	  	infinite: true,
 	  	verticalSwiping: true,
 	  	nextArrow: '<button><svg><use xlink:href="#left" /></svg></button>',
+	  	responsive: [
+			{
+		      breakpoint: 480,
+		      settings: {
+		        slidesToShow: 4,
+		        vertical: false
+		    	}
+		    }
+		]
 	  });
 
 		$('.vertical-slider').on('afterChange', function (event, slick, currentSlide) {

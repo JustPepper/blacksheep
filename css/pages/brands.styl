@@ -1,19 +1,27 @@
 .brand-slider
-	size 100% 553px
+	size 100% auto
 	margin-bottom 75px
+	@media screen and (min-width: 768px)
+		size 100% 553px
 	+e('item')
 		size 100%
-		background-size contain
+		background-size cover
 		background-repeat no-repeat
 		background-position center
 		font-size 32px
+		@media screen and (min-width: 768px)
+			background-size contain
 	+e('content')
-		size 50% 100%
-		padding-right 45px
+		size 100%
 		display flex
 		flex-direction column
+		padding 22px
 		justify-content center
-		align-items flex-end
+		@media screen and (min-width: 768px)
+			size 50% 100%
+			align-items flex-end
+			padding 0
+			padding-right 45px
 		.title
 			font-family $secundary_font
 			font-weight 900
@@ -25,13 +33,61 @@
 			size 100% 1px
 			border-bottom 1px dashed rgba($black, .50)
 			margin-bottom 25%
-
+	
+	+m('skullcandy')
+		margin-bottom 0
+		.brand-slider__item
+			background-size cover
+			transform: skew(0,1deg)
+			display flex
+			align-items center
+			padding 45px 22px
+			@media screen and (min-width: 768px)
+				padding 0
+		.brand-slider__content
+			background rgba(black, .5)
+			transform skew(0,-1deg)
+			color white
+			@media screen and (min-width: 768px)
+				height 150px
+			.info
+				size 100%
+				display flex
+				justify-content center
+				flex-direction column
+				align-items center
+				@media screen and (min-width: 768px)
+					justify-content center
+					flex-direction column
+					align-items flex-start
+					padding-left 75px
+				.title
+				.subtitle
+					margin 0
+				.subtitle
+					@media screen and (min-width: 768px)
+						font-size 28px
 .promo
 	border-top 1px dashed rgba($black, .50)
+	+m('skullcandy')
+		transform: skew(0,1deg)
+		.wrapper
+			height 120px
+			position relative
+			@media screen and (min-width: 768px)
+				height 65px
+			.promo__title
+				position absolute
+				transform skew(0, -1deg)
 	+e('title')
-		padding 22px 0
+		padding 22px
 		display flex
-		align-items center
+		align-items flex-start
+		flex-direction column
+		@media screen and (min-width: 768px)
+			flex-direction row
+			align-items center
+			padding 22px 0
 		.subtitle
 		.text
 			font-size 18px
@@ -50,21 +106,55 @@
 	font-family $secundary_font
 	ul
 		display flex
+		flex-direction column
+		@media screen and (min-width: 768px)
+			flex-direction row
 		li
-			size (100/ 4)% 65px
+			size 100% 65px
 			flex-center()
 			cursor pointer
+			@media screen and (min-width: 768px)
+				size (100/ 4)% 65px
 	+m('surf')
 		border-bottom 1px dashed rgba($black, .50)
 		li
 			border-right 1px dashed rgba($black, .50)
+			border-bottom 1px dashed rgba($black, .50)
 			&:last-child
-				border 0
+				border-bottom 0
+			@media screen and (min-width: 768px)
+				border-bottom 0
+				&:last-child
+					border 0
+	
+	+m('skullcandy')
+		margin-top 4px
+		transform skew(0,1deg)
+		background $black
+		color white
+		position relative
+		ul
+			li
+				transition background 250ms ease
+				border-bottom 1px dashed rgba(white, .50)
+				@media screen and (min-width: 768px)
+					border-right 1px dashed rgba(white, .50)
+					border-bottom 0
+				&:hover
+					background rgba(white, .50)
+				&:last-child
+					border-right 0
+				a
+					transform skew(0,-1deg)
+		.brand-nav--active
+			background rgba(white, .50)
+			border 0
+				
 
 .single-product--surf
-	max-width 1700px
+	max-width 100%
 	margin auto
-	padding 75px 0
+	padding 45px 0
 	.single-product__order
 		background $black
 		color white
@@ -75,39 +165,89 @@
 		.text
 			font-size 18px
 	.product
+		width 100% 
+		padding 22px
+		@media screen and (min-width: 768px)
+			size (100 / 3)% 475px
+			margin 0
+			padding 0
 		+e('photo')
 			border 0
+			overflow hidden
+			size 100%
+			margin 0 0 0 1%
+			img
+				size auto 100%
 	.vertical-slider
-		size 25%
+		size 100% auto
 		background white
-		border-right 1px dashed rgba($black, .5)
+		@media screen and (min-width: 768px)
+			size ( 100 / 4)% 100%
+			border-right 1px dashed rgba($black, .5)
 		div
 			overflow hidden
 			height 113px
-			border-bottom 1px dashed rgba($black, .5)
+			border-right 1px dashed rgba($black, .5)
+			@media screen and (min-width: 768px)
+				border-bottom 1px dashed rgba($black, .5)
+				border-right 0
 			img
-				position absolute
-				top 0
-				left 100%
-				transform-origin 0 0
-				transform rotate(90deg)
-				width 35%
-				height auto
+				height 100%
+				@media screen and (min-width: 768px)
+					transform-origin 0 0
+					transform rotate(90deg)
+					width 35%
+					height auto
+					position absolute
+					top 0
+					left 100%
 		.slick-current
 			border-bottom 1px dashed #cacaca
 			img
 				opacity .2
 		.slick-slide
 			position relative
+			flex-center()
 		.slick-arrow
 			background $black
 			border none
-			size 100% 24px
+			size 24px 100%
 			position absolute
 			bottom 0
-			left 0
+			right 0
 			outline 0
+			flex-center()
+			@media screen and (min-width: 768px)
+				size 100% 24px
+				left 0
 			svg
 				size 20px
 				fill white
-				transform rotate(-90deg)
+				transform rotate(180deg)
+				@media screen and (min-width: 768px)
+					transform rotate(-90deg)
+		
+		+m('skullcandy')
+			border 0
+			div
+				border 0
+				margin-bottom 4px
+				img
+					transform rotate(0deg)
+					size auto 100%
+					position relative
+					left 0
+					@media screen and (min-width: 768px)
+						size 100% auto
+			.slick-current
+				border 0
+
+
+
+	.single-product__info
+		width 100%
+		padding-left 22px
+		padding-right 22px
+		@media screen and (min-width: 768px)
+			size (100 / 3)%
+			padding 0 0 0 22px
