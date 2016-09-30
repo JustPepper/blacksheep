@@ -38,18 +38,18 @@
 		margin-bottom 0
 		.brand-slider__item
 			background-size cover
-			transform: skew(0,1deg)
 			display flex
 			align-items center
 			padding 45px 22px
 			@media screen and (min-width: 768px)
 				padding 0
+				transform: skew(0,1deg)
 		.brand-slider__content
 			background rgba(black, .5)
-			transform skew(0,-1deg)
 			color white
 			@media screen and (min-width: 768px)
 				height 150px
+				transform skew(0,-1deg)
 			.info
 				size 100%
 				display flex
@@ -70,7 +70,8 @@
 .promo
 	border-top 1px dashed rgba($black, .50)
 	+m('skullcandy')
-		transform: skew(0,1deg)
+		@media screen and (min-width: 768px)
+			transform: skew(0,1deg)
 		.wrapper
 			height 120px
 			position relative
@@ -78,7 +79,8 @@
 				height 65px
 			.promo__title
 				position absolute
-				transform skew(0, -1deg)
+				@media screen and (min-width: 768px)
+					transform skew(0, -1deg)
 	+e('title')
 		padding 22px
 		display flex
@@ -129,10 +131,11 @@
 	
 	+m('skullcandy')
 		margin-top 4px
-		transform skew(0,1deg)
 		background $black
 		color white
 		position relative
+		@media screen and (min-width: 768px)
+			transform skew(0,1deg)
 		ul
 			li
 				transition background 250ms ease
@@ -145,7 +148,8 @@
 				&:last-child
 					border-right 0
 				a
-					transform skew(0,-1deg)
+					@media screen and (min-width: 768px)
+						transform skew(0,-1deg)
 		.brand-nav--active
 			background rgba(white, .50)
 			border 0
@@ -154,7 +158,7 @@
 .single-product--surf
 	max-width 100%
 	margin auto
-	padding 45px 0
+	padding 75px 0
 	.single-product__order
 		background $black
 		color white

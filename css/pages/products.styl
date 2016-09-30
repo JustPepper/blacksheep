@@ -96,7 +96,11 @@
 				border-bottom 0
 	.featured-main
 		.grid__col
-			height 373px
+			height auto
+			&:nth-child(1)
+				height 373px
+			@media screen and (min-width: 768px)
+				height 373px
 		.featured-main-text
 			display flex
 			flex-direction column
@@ -158,6 +162,7 @@
 		user-select none
 		svg
 			size 18px
+			transition all 250ms ease
 	+e('specs')
 		margin-top 22px
 		border-top 1px dashed #dbdbdb
@@ -165,6 +170,9 @@
 		.text
 			line-height 1.5
 			margin-top 22px
+		.rotate-icon
+			svg
+				transform rotate(90deg)
 		.displayed-content
 			display none
 			+m('show')

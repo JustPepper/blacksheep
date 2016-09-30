@@ -73,16 +73,34 @@
 
 	  $('.spec__item').hover(
 	  	function() {
-	  		$(this).children().addClass('show animated rotateInUpLeft');
+	  		$(this).children('.spec__info').addClass('show animated rotateInUpLeft');
 	  	},
 	  	function() {
-	  		$(this).children().removeClass('show');
+	  		$(this).children('.spec__info').removeClass('show');
 	  	}
 	  )
 
 	  $('.single-product__subtitle').click(function() {
+	  	$(this).toggleClass('rotate-icon');
 	  	$(this).next().toggle('300');
 	  });
 
+	  $('.top-nav__ham').click(function() { 
+	  	$('.top-nav__menu').toggleClass('top-nav__menu--open');
+	  	$(this).toggleClass('top-nav__ham--open');
+	  });
+
+	  $('.img-accordion__item').hover(
+	  	function() {
+	  		$('.img-accordion__item').removeClass('img-accordion__item--active');
+	  		$(this).addClass('img-accordion__item--active'); 
+	  	},
+	  	function() {
+	  		//
+	  	}
+	  );
+
 	});
 })();
+
+new WOW().init();

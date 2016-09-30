@@ -21,6 +21,10 @@ a
 	text-decoration none
 	color inherit
 
+input
+	appearance none !important
+	border-radius 0
+
 .wrapper
 	max-width 1080px
 	size 100% auto
@@ -42,6 +46,7 @@ a
 	+m('big')
 		font-size 26px
 		line-height 1.4
+		animation-duration 2s
 		@media screen and (min-width: 768px)
 			font-size 55px
 			line-height 60px 
@@ -76,8 +81,11 @@ use-reset()
 use-box-sizing-reset()
 use-flex-grid()
 use-animate({
-	_rotateInUpLeft: true
-	_duration: 300ms
+	_rotateInUpLeft: true,
+	_fadeInDown: true,
+	_fadeInRight: true,
+	_fadeInLeft: true,
+	_fadeInUp: true
 })
 
 /* Modules */
@@ -98,6 +106,7 @@ header
 		font-weight 400
 		font-size rem(12px)
 		padding 0 1rem
+		position relative
 		@media screen and (min-width: 768px)
 			padding 0
 			height 86px
@@ -108,24 +117,43 @@ header
 			svg
 				height 100%
 		+e('menu')
+			size 100%
+			position fixed
+			background $black
+			top 0
+			left 0
+			z-index 9998
 			display none
-			height 100%
+			+m('open')
+				display block
 			@media screen and (min-width: 768px)
 				display block
+				position relative
+				width auto
+				background none
 			ul
 				display flex
 				height inherit
+				flex-direction column
+				justify-content center
+				@media screen and (min-width: 768px)
+					flex-direction row
 				li
 					position relative
 					height inherit
 					display flex
 					align-items center
+					height 45px
+					@media screen and (min-width: 768px)
+						height auto
 					&:hover
 						ul
 							display flex
 				ul
 					display none
 					position absolute
+					left 0
+					top 0
 					flex-direction column
 					top 86px
 					height auto
@@ -144,6 +172,24 @@ header
 						&:first-child
 							a
 								border-bottom 1px dashed white
+				.dropdown
+					@media screen and (max-width: 768px)
+						a
+							display none
+						ul
+							display block
+							width 100%
+							height auto
+							top 0
+							li
+								size 100% 45px
+								a
+									display flex
+									height 100%
+									border 0
+									justify-content flex-start
+									margin 0
+									padding-left 26px
 			a
 				letter-spacing 3.23px
 				padding 0 8px
@@ -151,9 +197,49 @@ header
 				size 100%
 				display flex
 				align-items center
+				justify-content flex-start
+				padding-left 26px
+				@media screen and (min-width: 768px)
+					padding 0 8px
 				&:hover
 					color #9b922c
-	
+									
+		+e('ham')
+			position absolute
+			right 16px
+			top 0
+			size 30px 68px
+			overflow hidden
+			z-index 9999
+			@media screen and (min-width: 768px)
+				display none
+			span
+				size 100% 3px
+				border-radius 1px
+				background white
+				position absolute
+				left 0
+				opacity 1
+				transform rotate(0deg)
+				transition all .25s ease-in-out
+				&:nth-child(1)
+					top 23px
+				&:nth-child(2)
+					top 33px
+				&:nth-child(3)
+					top 43px
+			+m('open')
+				span
+					&:nth-child(1)
+						transform rotate(135deg)
+						top 33px
+					&:nth-child(2)
+						opacity 0
+						left -30px
+					&:nth-child(3)
+						transform rotate(-135deg)
+						top 33px
+
 	.featured-slider
 		size 100% auto
 		@media screen and (min-width: 768px)
@@ -233,14 +319,19 @@ header
 		top 50%
 		margin-top -25px
 		left 0
+		padding 0 12px
+		flex-center()
 		.wrapper
 			display flex
 			justify-content flex-end
 		button
-			size 50px
+			size 42px
 			background none
 			border none
 			outline 0
+			appearance none
+			@media screen and (min-width: 768px)
+				size 50px
 			svg
 				size 100%
 				fill white
@@ -338,26 +429,50 @@ header
 			.section-featured__subtitle
 				border-color white
 			+m('logo')
+				display block
+				size 100% 
 				text-align center
+				flex-center()
 		.skullcandy
 			width 75%
 		.lost
 			width 55%
 			
 	+e('spec')
-		size 100 - (100 / 3)% 400px
+		width 100% auto
 		position relative
 		display flex
+		flex-direction column
+		.rotateInUpLeft
+			@media screen and (max-width: 768px)
+				animation-name none
+		@media screen and (min-width: 768px)
+			size 100 - (100 / 3)% 400px
+			flex-direction row
 		.spec__item
-			size (100 / 4)% inherit
-			background-size cover
-			background-position left
+			size 100% auto
+			@media screen and (min-width: 768px)
+				size (100 / 4)% inherit
+			.spec__image
+				size 100% 300px
+				overflow hidden
+				text-align center
+				@media screen and (min-width: 768px)
+					height 100%
+				img
+					size auto 100%
+					z-index -1
 			.spec__info
-				size 100%
-				position absolute
-				left 0
-				top 0
-				display none
+				size 100% 400px
+				display block
+				position relative
+				animation-duration 300ms
+				@media screen and (min-width: 768px)
+					height 100%
+					display none
+					position absolute
+					left 0
+					top 0
 			ul
 				position absolute
 				left 0
@@ -365,10 +480,16 @@ header
 				size 100%
 				background-color #C2C2C2
 				display flex
+				flex-direction column
+				@media screen and (min-width: 768px)
+					flex-direction row
+					z-index 999
 				li
 					display flex
-					flex-direction column
-					size (100 / 5)% 100%
+					size 100% (100 / 5)%
+					@media screen and (min-width: 768px)
+						size (100 / 5)% 100%
+						flex-direction column
 					div
 						flex 1
 					.spec__icon
@@ -386,26 +507,41 @@ header
 							fill $black
 					&:last-child
 						.spec__icon
-							border-right 0
+							@media screen and (min-width: 768px)
+								border-right 0
 
 .show
 	display block !important
 
 .img-accordion
-	size 100% 400px
+	size 100% 600px
 	overflow hidden
-	position relative 
+	position relative
+	flex-direction column
+	@media screen and (min-width: 768px)
+		size 100% 400px
+		flex-direction row
 	+e('item')
-		size inherit
+		size 100% 15%
+		background-size cover
+		background-position fixed
+		transition all 350ms ease-in-out
+		@media screen and (min-width: 768px)
+			size 15% inherit
 		flex-center()
+		.section-featured
+			width auto
+			display none
 		.back-img
 			img
 				size 100% auto
-		&:nth-child(1)
-			width 70%
-		&:nth-child(2)
-		&:nth-child(3)
-			width 15%
+		+m('active')
+			height 70%
+			@media screen and (min-width: 768px)
+				size 70% auto
+			.section-featured
+				display block
+				opacity 1
 		.section-featured
 			color white
 			+e('title')
@@ -444,9 +580,10 @@ header
 			size 100% 300px
 	.slick-prev
 		background-color $black
-		width 32px
-		margin 0 5px
+		size auto 100%
 		border none
+		padding 0 8px
+		flex-center()
 		svg
 			size 18px
 			fill white
@@ -466,6 +603,7 @@ header
 		max-width 775px
 		flex-direction column
 		align-items center
+		text-align center
 		@media screen and (min-width: 768px)
 			flex-direction row
 			justify-content space-around
@@ -534,3 +672,4 @@ header
 
 /* Brands */
 @import 'pages/brands.styl'
+

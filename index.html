@@ -190,11 +190,16 @@
                                 <rect x="117" y="9.6" class="st0" width="1" height="55"/>
                         </svg>
                     </figure>
+                    <div class="top-nav__ham">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                     <nav class="top-nav__menu">
                         <ul>
                             <li><a href="#">NOSOTROS</a></li>
                             <li><a href="#">SERVICIOS</a></li>
-                            <li><a href="#">CATÁLOGO</a>
+                            <li class="dropdown"><a href="#">CATÁLOGO</a>
                                 <ul>
                                     <li><a href="#">MKT TECNOLÓGICO</a></li>
                                     <li><a href="#">MKT TRADICIONAL</a></li>
@@ -217,7 +222,7 @@
                                 MARKETING DE INNOVACIÓN
                             </h3>
                             <hr>
-                            <h1 class="title title--big">
+                            <h1 class="title title--big wow animated fadeInDown">
                                 Comparte <br>
                                 música con tus amigos   
                             </h1>
@@ -237,7 +242,7 @@
                                 MARKETING DE INNOVACIÓN
                             </h3>
                             <hr>
-                            <h1 class="title title--big">
+                            <h1 class="title title--big wow animated fadeInDown">
                                 Comparte <br>
                                 música con tus amigos   
                             </h1>
@@ -259,11 +264,11 @@
         </header>
         
         <section class="wrapper section grid">
-            <div class="section-featured">
+            <div class="section-featured wow animated fadeInLeft">
                 <h2 class="section-featured__title">Comunicación <br> contidiana</h2>
                 <h3 class="section-featured__subtitle">LOREM IMPSUN</h3>
             </div>
-            <div class="section-right">
+            <div class="section-right wow animated fadeInRight">
                 <div class="icon-wrapper">
                     <ul>
                         <li><a href="#"><svg><use xlink:href="#facebook" /></svg></a></li>
@@ -305,16 +310,26 @@
         <section class="section">
             <div class="wrapper">
                 <div class="img-accordion grid">
-                    <div class="img-accordion__item" style="background-image: url('img/surfing-sport-wallpaper.jpg')">
+                    <div class="img-accordion__item img-accordion__item--active" style="background-image: url('img/surfing-sport-wallpaper.jpg')">
                         <div class="section-featured">
                             <h2 class="section-featured__title">Conoce nuestros mejores <br> productos</h2>
                             <h3 class="section-featured__subtitle">CATÁLOGO + <br> BLACKSHEEP</h3>
                             <a href="#" class="btn btn--border">DESCARGAR CATÁLOGO</a>
                         </div>
                     </div>
-                    <div class="img-accordion__item" style="background-image: url('img/314122_391702357548062_1612904134_n.jpg')"> 
+                    <div class="img-accordion__item" style="background-image: url('img/314122_391702357548062_1612904134_n.jpg')">
+                        <div class="section-featured">
+                            <h2 class="section-featured__title">Conoce nuestros mejores <br> productos</h2>
+                            <h3 class="section-featured__subtitle">CATÁLOGO + <br> BLACKSHEEP</h3>
+                            <a href="#" class="btn btn--border">DESCARGAR CATÁLOGO</a>
+                        </div>
                     </div>
                     <div class="img-accordion__item" style="background-image: url('img/craftbreweries.jpg')">
+                        <div class="section-featured">
+                            <h2 class="section-featured__title">Conoce nuestros mejores <br> productos</h2>
+                            <h3 class="section-featured__subtitle">CATÁLOGO + <br> BLACKSHEEP</h3>
+                            <a href="#" class="btn btn--border">DESCARGAR CATÁLOGO</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -329,7 +344,7 @@
             </div>
             <div class="carrousel">
                 <div class="carrousel__item">
-                    <iframe src="https://www.youtube.com/embed/f1AB1_0mSHQ" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/f1AB1_0mSHQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="carrousel__item">
                     <iframe src="https://www.youtube.com/embed/BO6KWUVEMl4" frameborder="0" allowfullscreen></iframe>
@@ -371,6 +386,7 @@
 
         <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
         <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
