@@ -23,10 +23,6 @@ gulp.task('html', function() {
 	gulp.src('./*.html')
 		.pipe(connect.reload());
 });
-gulp.task('js', function() {
-	gulp.src('./js/*.js')
-		.pipe(connect.reload());
-});
 
 /* Stylus */
 gulp.task('compile', function() {
@@ -67,7 +63,6 @@ gulp.task('scripts', function() {
 /* Watch */
 gulp.task('watch', function() {
 	gulp.watch(['./*.html'], ['html']);
-	gulp.watch(['./js/*.js'], ['js']);
 	gulp.watch('./css/**/*.styl', ['compile']);
 	gulp.watch('./css/main.css', ['prefix']);
 });

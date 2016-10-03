@@ -46,6 +46,13 @@
 	flex-wrap wrap
 	justify-content center
 	padding-top 75px
+	@media screen and (min-width: 768px)
+		padding-left 22px
+		padding-right 22px
+		justify-content space-around
+	@media screen and (min-width: 1024px)
+		padding-left 0
+		padding-right 0
 	+m('carrousel')
 		padding 75px 50px
 		.right
@@ -78,7 +85,7 @@
 					size 66px 23px
 					font-size 70%
 					top 0
-	@media screen and (min-width: 768px)
+	@media screen and (min-width: 1024px)
 		justify-content space-between
 
 .featured-products
@@ -87,19 +94,22 @@
 		background-size 100% auto
 		background-position center
 		background-repeat no-repeat
-		@media screen and (min-width: 768px)
+		@media screen and (min-width: 1024px)
 			background-size cover
 		+m('with-border')
 			border-bottom 1px solid $black
-			@media screen and (min-width: 768px)
+			@media screen and (min-width: 1024px)
 				border-right 1px solid $black
 				border-bottom 0
 	.featured-main
+		flex-direction column
+		@media screen and (min-width: 1024px)
+			flex-direction row
 		.grid__col
 			height auto
 			&:nth-child(1)
 				height 373px
-			@media screen and (min-width: 768px)
+			@media screen and (min-width: 1024px)
 				height 373px
 		.featured-main-text
 			display flex
@@ -108,7 +118,8 @@
 			justify-content space-around
 			size 100%
 			padding 35px
-			@media screen and (min-width: 768px)
+			height 400px
+			@media screen and (min-width: 1024px)
 				padding 35px 0 35px 45px
 	.featured-small
 		.grid__col
@@ -120,30 +131,30 @@
 	flex-direction column
 	height auto
 	padding-bottom 45px
-	@media screen and (min-width: 768px)
+	@media screen and (min-width: 1024px)
 		flex-direction row
 	+e('photos')
 		size 100% 150px
 		margin-bottom 45px
 		overflow hidden
 		text-align center
-		@media screen and (min-width: 768px)
+		@media screen and (min-width: 1024px)
 			size 20% 455px
 		img
 			size auto 100%
-			@media screen and (min-width: 768px)
+			@media screen and (min-width: 1024px)
 				size 100% auto
 	.product 
 		size 90% 300px
 		margin 0 auto
-		@media screen and (min-width: 768px)
+		@media screen and (min-width: 1024px)
 			size 475px
 			margin 0 45px
 	+e('info')
 		width 100%
 		font-family $secundary_font
 		padding 22px
-		@media screen and (min-width: 768px)
+		@media screen and (min-width: 1024px)
 			width 35%
 			padding 0
 		.text
@@ -211,10 +222,10 @@
 		border-top 1px dashed #dbdbdb
 		display flex
 		flex-direction column
-		@media screen and (min-width: 768px)
+		@media screen and (min-width: 1024px)
 			flex-direction row
 		.btn
 			font-size 85%
 			margin-top 22px
-			@media screen and (min-width: 768px)
+			@media screen and (min-width: 1024px)
 				margin-top 0

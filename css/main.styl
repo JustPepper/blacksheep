@@ -58,6 +58,9 @@ input
 	@media screen and (min-width: 768px)
 		flex-direction row
 		align-items flex-end
+		padding 0 12px
+	@media screen and (min-width: 1024px)
+		padding 0
 	.title
 		font-size 32px
 		margin-bottom 14px
@@ -107,12 +110,12 @@ header
 		font-size rem(12px)
 		padding 0 1rem
 		position relative
-		@media screen and (min-width: 768px)
+		@media screen and (min-width: 1024px)
 			padding 0
 			height 86px
 		+e('logo')
 			height 34px
-			@media screen and (min-width: 768px)
+			@media screen and (min-width: 1024px)
 				height 54px
 			svg
 				height 100%
@@ -126,7 +129,7 @@ header
 			display none
 			+m('open')
 				display block
-			@media screen and (min-width: 768px)
+			@media screen and (min-width: 1024px)
 				display block
 				position relative
 				width auto
@@ -136,7 +139,7 @@ header
 				height inherit
 				flex-direction column
 				justify-content center
-				@media screen and (min-width: 768px)
+				@media screen and (min-width: 1024px)
 					flex-direction row
 				li
 					position relative
@@ -144,14 +147,13 @@ header
 					display flex
 					align-items center
 					height 45px
-					@media screen and (min-width: 768px)
+					@media screen and (min-width: 1024px)
 						height auto
 					&:hover
 						ul
 							display flex
 				ul
 					display none
-					position absolute
 					left 0
 					top 0
 					flex-direction column
@@ -159,6 +161,9 @@ header
 					height auto
 					background-color $black
 					z-index 9999
+					position relative
+					@media screen and (min-width: 1024px)
+						position absolute
 					li
 						size 200px auto
 						a
@@ -173,7 +178,8 @@ header
 							a
 								border-bottom 1px dashed white
 				.dropdown
-					@media screen and (max-width: 768px)
+					height auto
+					@media screen and (max-width: 1024px)
 						a
 							display none
 						ul
@@ -199,7 +205,7 @@ header
 				align-items center
 				justify-content flex-start
 				padding-left 26px
-				@media screen and (min-width: 768px)
+				@media screen and (min-width: 1024px)
 					padding 0 8px
 				&:hover
 					color #9b922c
@@ -211,7 +217,7 @@ header
 			size 30px 68px
 			overflow hidden
 			z-index 9999
-			@media screen and (min-width: 768px)
+			@media screen and (min-width: 1024px)
 				display none
 			span
 				size 100% 3px
@@ -254,6 +260,7 @@ header
 			background-repeat no-repeat
 			@media screen and (min-width: 768px)
 				height 593px
+			@media screen and (min-width 1024px)
 				padding 0
 		+e('text')
 			size 100%
@@ -272,6 +279,9 @@ header
 					margin 45px 0 90px
 			+m('white')
 				color white
+				padding 0 22px
+				@media screen and (min-width: 1024px)
+					padding 0
 			hr
 				border none
 				margin 0
@@ -286,6 +296,9 @@ header
 			font-weight 300
 			text-align center
 			background-color rgba(white, .10)
+			display none
+			@media screen and (min-width: 1024px)
+				display block
 	.dots-wrapper
 		position absolute
 		size 100% 35px
@@ -294,13 +307,13 @@ header
 		display flex
 		justify-content flex-start
 		align-items center
-		@media screen and (min-width: 768px)
+		@media screen and (min-width: 1024px)
 			height 250px
 		.featured-dots
 			display flex
 			z-index 999
 			justify-content center
-			@media screen and (min-width: 768px)
+			@media screen and (min-width: 1024px)
 				justify-content flex-start
 			button
 				font-size 0
@@ -347,8 +360,10 @@ header
 		padding 0
 
 .section
-	padding 75px 0
+	padding 75px 12px
 	size 100% auto
+	@media screen and (min-width: 1024px)
+		padding 75px 0
 	+m('skullcandy')
 		flex-direction column
 		.section-featured
@@ -361,7 +376,7 @@ header
 				margin 0
 	.section-featured
 		width 100%
-		@media screen and (min-width: 768px)
+		@media screen and (min-width: 1024px)
 			width 36%
 	.section-right
 		line-height 1.1
@@ -372,7 +387,7 @@ header
 		justify-content flex-start
 		width 100%
 		padding 22px
-		@media screen and (min-width: 768px)
+		@media screen and (min-width: 1024px)
 			padding 0
 			padding-left 75px
 			text-align right

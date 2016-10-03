@@ -13,6 +13,12 @@
 		      settings: {
 		        slidesToShow: 1
 		    	}
+		    },
+		    {
+		      breakpoint: 1024,
+		      settings: {
+		        slidesToShow: 2
+		    	}
 		    }
 		]
 	  });
@@ -56,7 +62,7 @@
 	  	nextArrow: '<button><svg><use xlink:href="#left" /></svg></button>',
 	  	responsive: [
 			{
-		      breakpoint: 480,
+		      breakpoint: 1024,
 		      settings: {
 		        slidesToShow: 4,
 		        vertical: false
@@ -102,5 +108,3 @@
 
 	});
 })();
-
-new WOW().init();
