@@ -1366,8 +1366,8 @@ header .arrow-wrapper button svg {
   height: 15%;
   background-size: cover;
   background-position: fixed;
-  -webkit-transition: all 350ms ease-in-out;
-  transition: all 350ms ease-in-out;
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
@@ -1764,6 +1764,10 @@ header .arrow-wrapper button svg {
   .services .with-border {
     border-right: 1px dashed rgba(33,33,33,0.25);
   }
+}
+.delay {
+  -webkit-animation-delay: 1s !important;
+  animation-delay: 1s !important;
 }
 .service {
   font-family: 'Roboto', sans-serif;
