@@ -975,6 +975,7 @@ header .featured-slider__text hr {
   height: 2px;
   background-color: #fff;
   width: 35%;
+  float: left;
 }
 @media screen and (min-width: 768px) {
   header .featured-slider__text hr {
@@ -1967,6 +1968,9 @@ header .arrow-wrapper button svg {
   .contact-form .wrapper {
     -webkit-box-align: center;
     align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
   }
   .contact-form .wrapper .grid__col {
     padding-left: 22px;
@@ -2364,11 +2368,16 @@ header .arrow-wrapper button svg {
   -webkit-user-select: none;
   user-select: none;
 }
+.single-product__subtitle #right {
+  display: block;
+}
+.single-product__subtitle #down {
+  display: none;
+}
 .single-product__subtitle svg {
-  width: 18px;
-  height: 18px;
-  -webkit-transition: all 250ms ease;
-  transition: all 250ms ease;
+  width: 20px;
+  height: 20px;
+  fill: rgba(33,33,33,0.75);
 }
 .single-product__specs {
   margin-top: 22px;
@@ -2380,8 +2389,13 @@ header .arrow-wrapper button svg {
   margin-top: 22px;
 }
 .single-product__specs .rotate-icon svg {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
+  fill: #212121;
+}
+.single-product__specs .rotate-icon #down {
+  display: block;
+}
+.single-product__specs .rotate-icon #right {
+  display: none;
 }
 .single-product__specs .displayed-content {
   display: none;
@@ -2472,6 +2486,18 @@ header .arrow-wrapper button svg {
   margin-bottom: 75px;
   position: relative;
 }
+.brand-slider .slick-list {
+  height: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .brand-slider .slick-list {
+    -webkit-transform: skew(0, 1deg);
+    transform: skew(0, 1deg);
+  }
+}
+.brand-slider .slick-list .slick-track {
+  height: 100%;
+}
 .brand-slider .background {
   background: url("../img/lost-brand-slider.png") no-repeat center top;
   background-size: cover;
@@ -2525,6 +2551,8 @@ header .arrow-wrapper button svg {
   width: 100%;
   height: 100%;
   font-size: 32px;
+  background-size: cover;
+  background-position: center;
 }
 .brand-slider__content {
   width: 100%;
@@ -2577,8 +2605,6 @@ header .arrow-wrapper button svg {
 @media screen and (min-width: 1024px) {
   .brand-slider--skullcandy .brand-slider__item {
     padding: 0;
-    -webkit-transform: skew(0, 1deg);
-    transform: skew(0, 1deg);
   }
 }
 .brand-slider--skullcandy .brand-slider__content {
@@ -2594,7 +2620,7 @@ header .arrow-wrapper button svg {
 }
 .brand-slider--skullcandy .brand-slider__content .info {
   width: 100%;
-  height: 100%;
+  height: 200px;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
@@ -2607,6 +2633,8 @@ header .arrow-wrapper button svg {
 }
 @media screen and (min-width: 1024px) {
   .brand-slider--skullcandy .brand-slider__content .info {
+    width: 100%;
+    height: 100%;
     -webkit-box-pack: center;
     justify-content: center;
     -webkit-box-orient: vertical;
@@ -2915,15 +2943,11 @@ header .arrow-wrapper button svg {
 }
 @media screen and (min-width: 1024px) {
   .single-product--surf .vertical-slider div img {
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
-    width: 35%;
+    width: 30%;
     height: auto;
-    position: absolute;
-    top: 0;
-    left: 100%;
+    position: relative;
   }
 }
 .single-product--surf .vertical-slider .slick-current {

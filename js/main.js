@@ -23,6 +23,16 @@
 		]
 	  });
 
+	  $('.brand-slider--skullcandy').slick({
+	  	infinite: true,
+	  	slidesToShow: 1,
+	  	slidesToScroll: 1,
+	  	autoplay: true,
+	  	arrows: false,
+	  	draggable: false,
+	  	autoplaySpeed: 4000
+	  })
+
 	  $('.featured-slider').slick({
 	  	nextArrow: '<button><svg><use xlink:href="#right" /></svg></button>',
 	  	prevArrow: null,
@@ -31,7 +41,7 @@
 	  	appendArrows: $('.appended-arrow'),
 	  	dotsClass: 'featured-dots',
 	  	appendDots: $(".appended-dots"),
-	  	autoplay: false,
+	  	autoplay: true,
   		autoplaySpeed: 2000
 	  });
 

@@ -171,9 +171,13 @@
 		justify-content space-between
 		cursor pointer
 		user-select none
+		#right
+			display block
+		#down
+			display none
 		svg
-			size 18px
-			transition all 250ms ease
+			size 20px
+			fill rgba($black, .75)
 	+e('specs')
 		margin-top 22px
 		border-top 1px dashed #dbdbdb
@@ -183,7 +187,11 @@
 			margin-top 22px
 		.rotate-icon
 			svg
-				transform rotate(90deg)
+				fill $black
+			#down
+				display block
+			#right
+				display none
 		.displayed-content
 			display none
 			+m('show')
